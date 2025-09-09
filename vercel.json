@@ -2,5 +2,5 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "vite",
-  "installCommand": "npm ci || npm i"
+  "installCommand": "npm ci --include=dev || npm i --include=dev"
 }
