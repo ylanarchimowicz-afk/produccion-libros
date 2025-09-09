@@ -1,4 +1,5 @@
-﻿import "./ui.css";
+﻿import "./index.css";
+import "./ui.css";
 import "./hotfix.css";
 const root = document.getElementById("root");
 root.innerHTML = `
@@ -8,4 +9,5 @@ root.innerHTML = `
     <div class="machine-card"><h3>Ricoh 8400 (ByN)</h3><p>Setup 3 min  Cierre 0 min</p></div>
   </div>
 `;
+
 
