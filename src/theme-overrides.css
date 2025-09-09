@@ -1,0 +1,91 @@
+﻿@import "tailwindcss";
+
+/* --- Base limpia --- */
+:root { color-scheme: light; }
+html, body { height: 100%; }
+body {
+  @apply bg-slate-50 text-slate-800 antialiased;
+  font-feature-settings: "cv02","cv03","cv04","cv11";
+}
+
+/* --- Contenedor central --- */
+#root > * {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* --- Títulos --- */
+h1 { @apply text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 mb-4; }
+h2 { @apply text-xl font-semibold text-slate-900 mt-6 mb-3; }
+h3 { @apply text-lg font-semibold text-slate-900 mt-4 mb-2; }
+
+/* --- Tarjetas: grupos de sección comunes --- */
+/* Todo bloque inmediato con muchos controles se verá como card sin requerir clases */
+section, .config-block, .machine-card, .task-card, .person-card {
+  @apply bg-white border border-slate-200 rounded-2xl shadow-sm p-4 mb-4;
+}
+
+/* Fallback para divs sueltos con contenido de configuración */
+div:has(> label, > input, > button):where(:not(.no-card)) {
+  @apply bg-white border border-slate-200 rounded-2xl shadow-sm p-4 mb-3;
+}
+
+/* --- Inputs & selects --- */
+input[type="text"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="search"],
+select, textarea {
+  @apply w-full bg-white border border-slate-300 rounded-lg px-3 py-2 text-sm outline-none focus:ring-2 focus:ring-sky-200 focus:border-sky-400;
+}
+
+/* Checkbox y switch más visibles */
+input[type="checkbox"] {
+  @apply h-4 w-4 rounded border-slate-300 text-sky-600 focus:ring-sky-200 align-middle;
+}
+
+/* --- Botones --- */
+button, .btn {
+  @apply inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-medium text-slate-700 hover:bg-slate-50 active:scale-[.99] transition;
+}
+button.primary, .btn-primary {
+  @apply border-sky-600 bg-sky-600 text-white hover:bg-sky-700;
+}
+
+/* Icon-buttons (ej. lápiz, guardar, reset) */
+button.icon, .btn-icon {
+  @apply h-9 w-9 rounded-lg border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center;
+}
+
+/* --- Chips (tags) --- */
+.chip, .tag, .selected-item {
+  @apply inline-flex items-center gap-2 rounded-full bg-slate-100 text-slate-700 text-xs px-3 py-1 mr-2 mb-2 border border-slate-200;
+}
+.chip .x, .tag .x, .selected-item .x { @apply cursor-pointer opacity-70 hover:opacity-100; }
+
+/* --- Tabs (los 4 botones superiores) --- */
+nav, .tabs { @apply mb-4; }
+nav button, .tabs button {
+  @apply rounded-xl px-4 py-2 text-sm font-medium bg-white border border-slate-200 text-slate-700 hover:bg-slate-50;
+}
+nav button[aria-selected="true"], .tabs .active {
+  @apply bg-slate-900 text-white border-slate-900;
+}
+
+/* --- Listas y tablas finas --- */
+ul { @apply list-disc ml-5; }
+hr { @apply my-4 border-slate-200; }
+
+/* --- Helper para columnas responsivas de configuración --- */
+.grid-config {
+  @apply grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4;
+}
+
+/* --- Fix de formularios en línea --- */
+.inline-form { @apply flex items-center gap-3 flex-wrap; }
+
+/* --- Mensajes de error de validación (por regex de hora) --- */
+.input-error { @apply border-red-500 ring-2 ring-red-200; }
+.error-text   { @apply text-red-600 text-xs mt-1; }
