@@ -1,0 +1,125 @@
+﻿/* --- Reset suave / tipografía --- */
+:root { color-scheme: light; }
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  background: #f8fafc; /* slate-50 */
+  color: #0f172a;      /* slate-900 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Contenedor centrado / márgenes cómodos --- */
+#root > * {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 24px;
+}
+
+/* --- Títulos jerárquicos --- */
+h1 { font-size: clamp(28px, 3.2vw, 42px); font-weight: 800; letter-spacing: -0.02em; margin: 8px 0 16px; }
+h2 { font-size: 20px; font-weight: 700; margin: 24px 0 12px; }
+h3 { font-size: 16px; font-weight: 600; margin: 16px 0 8px; }
+
+/* --- Tarjetas genéricas (sin tocar JSX) --- */
+section, .config-block, .machine-card, .task-card, .person-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;   /* slate-200 */
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+/* Cardizar automáticamente muchos bloques con formularios */
+div:has(> label, > input, > button, > select, > textarea):not(.no-card) {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.04);
+  padding: 16px;
+  margin-bottom: 12px;
+}
+
+/* --- Inputs / selects / textareas --- */
+input[type="text"],
+input[type="number"],
+input[type="time"],
+input[type="date"],
+input[type="search"],
+select,
+textarea {
+  width: 100%;
+  background: #fff;
+  border: 1px solid #cbd5e1;   /* slate-300 */
+  border-radius: 10px;
+  padding: 8px 10px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color .15s, box-shadow .15s;
+}
+input:focus, select:focus, textarea:focus {
+  border-color: #38bdf8;       /* sky-400 */
+  box-shadow: 0 0 0 3px rgba(56,189,248,.25);
+}
+
+/* Estados de error (para tus validaciones hh:mm) */
+.input-error { border-color: #ef4444 !important; box-shadow: 0 0 0 3px rgba(239,68,68,.2) !important; }
+.error-text  { color: #dc2626; font-size: 12px; margin-top: 4px; }
+
+/* --- Checkboxes / radios --- */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #0ea5e9; /* sky-500 */
+  width: 16px; height: 16px; vertical-align: middle;
+}
+
+/* --- Botones --- */
+button, .btn {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: #fff; color: #0f172a;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  padding: 8px 12px; font-size: 14px; font-weight: 600;
+  cursor: pointer; transition: transform .05s, background .15s;
+}
+button:hover, .btn:hover { background: #f8fafc; }
+button:active, .btn:active { transform: scale(.99); }
+button.primary, .btn-primary { background: #0f172a; color: #fff; border-color: #0f172a; }
+button.primary:hover, .btn-primary:hover { background: #111827; }
+
+/* Icon-buttons (lápiz/guardar/reset) */
+button.icon, .btn-icon {
+  width: 36px; height: 36px; padding: 0; justify-content: center;
+  border-radius: 10px;
+}
+
+/* --- Chips / tags --- */
+.chip, .tag, .selected-item {
+  display:inline-flex; align-items:center; gap:6px;
+  padding:4px 10px; font-size:12px;
+  background:#f1f5f9; color:#334155; border:1px solid #e2e8f0; border-radius:999px;
+  margin:0 8px 8px 0;
+}
+.chip .x, .tag .x, .selected-item .x { opacity:.7; cursor:pointer; }
+.chip .x:hover, .tag .x:hover, .selected-item .x:hover { opacity:1; }
+
+/* --- Tabs (los 4 botones superiores) --- */
+.tabs, nav { margin-bottom: 16px; display:flex; gap:8px; flex-wrap:wrap; }
+.tabs button, nav button {
+  background:#fff; color:#334155; border:1px solid #e2e8f0; border-radius:12px; padding:8px 14px; font-weight:600;
+}
+.tabs button[aria-selected="true"], nav button[aria-selected="true"],
+.tabs .active, nav .active {
+  background:#0f172a; color:#fff; border-color:#0f172a;
+}
+
+/* --- Helpers de grilla --- */
+.grid-config { display:grid; grid-template-columns:repeat(1,minmax(0,1fr)); gap:16px; }
+@media (min-width: 768px){ .grid-config { grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (min-width:1200px){ .grid-config { grid-template-columns:repeat(3,minmax(0,1fr)); } }
+
+/* --- Tablas / listas --- */
+ul { margin: 6px 0 6px 18px; }
+hr { border:0; border-top:1px solid #e2e8f0; margin:16px 0; }
