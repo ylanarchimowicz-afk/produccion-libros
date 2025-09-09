@@ -1,11 +1,15 @@
-{
-  "devDependencies": {
-    "@tailwindcss/postcss": "^4.1.13",
-    "autoprefixer": "^10.4.21"
-  },
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  }
+﻿{
+    "devDependencies":  {
+                            "@tailwindcss/postcss":  "^4.1.13",
+                            "autoprefixer":  "^10.4.21",
+                            "vite":  "^7.1.5"
+                        },
+    "scripts":  {
+                    "dev":  "vite",
+                    "build":  "vite build",
+                    "preview":  "vite preview"
+                },
+    "engines":  {
+                    "node":  "\u003e=18"
+                }
 }
