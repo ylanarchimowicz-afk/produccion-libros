@@ -2,5 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-/* toque sutil para que se vea como en los otros proyectos */
+/* toque sutil para que se vea prolijo */
 :root { color-scheme: light; }
