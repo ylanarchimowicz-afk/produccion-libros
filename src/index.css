@@ -1,6 +1,4 @@
-﻿@tailwind base;
-@tailwind components;
-@tailwind utilities;
+﻿@import "tailwindcss";
 
-/* toque sutil para que se vea prolijo */
+/* estilos mínimos globales */
 :root { color-scheme: light; }
